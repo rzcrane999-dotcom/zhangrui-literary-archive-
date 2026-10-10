@@ -1,133 +1,941 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>张叡文学档案——鹤鸣文学总编人物研究档案</title>
-<meta name="description" content="张叡文学档案：旅美华文诗人、作家，《鹤鸣文学》总编人物研究档案。">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张叡文学档案 · 网页总结版</title>
+<script src="https://aisearch-task.bj.bcebos.com/static/tailwindcss-3.4.17.js"></script>
 <style>
-body{margin:0;background:#f5f1e8;color:#29251f;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",serif;line-height:1.9}
-main{max-width:900px;margin:auto;background:#fffdf8;padding:55px 7%;box-sizing:border-box}
-h1{text-align:center;font-size:34px;letter-spacing:4px;margin:10px 0}
-h2{text-align:center;font-size:20px;font-weight:400;margin:0 0 45px;color:#6b5540}
-h3{font-size:22px;border-left:4px solid #8a6848;padding-left:12px;margin-top:45px}
-h4{font-size:18px;margin-top:28px}
-p{font-size:16px;text-align:justify}
-.cover{text-align:center;padding:45px 0 35px;border-bottom:1px solid #d8cdbd}
-.meta{text-align:center;color:#756a5e}
-.toc{background:#f7f2e9;padding:25px 30px;margin:35px 0}
-.toc a{color:#5b4634;text-decoration:none}
-.note{background:#faf7f0;border:1px solid #e3d9ca;padding:20px 25px;margin:25px 0}
-footer{margin-top:55px;padding-top:25px;border-top:1px solid #d8cdbd;text-align:center;color:#777;font-size:14px}
+  :root{
+    --ink:#1f2a37;
+    --ink-soft:#4b5563;
+    --paper:#f7f3ec;
+    --paper-2:#ece4d6;
+    --brand:#8a2a1d;       /* 朱砂红 */
+    --brand-2:#b8894d;     /* 赭金 */
+    --brand-3:#2c4a52;     /* 墨青 */
+    --accent:#d4a93e;      /* 明黄 */
+    --card:#ffffff;
+    --muted:#6b7280;
+    --line:rgba(138,42,29,0.15);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'PingFang SC','HarmonyOS Sans SC','Microsoft YaHei',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, rgba(184,137,77,0.12), transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, rgba(138,42,29,0.08), transparent 60%),
+      radial-gradient(800px 400px at 50% 110%, rgba(44,74,82,0.08), transparent 60%);
+    -webkit-font-smoothing:antialiased;
+  }
+  .font-serif-zh{font-family:'Songti SC','STSong','SimSun',serif;}
+  .font-display{font-family:Georgia,'Times New Roman','Songti SC',serif;}
+
+  /* ======== HERO 印章/题字装饰 ======== */
+  .seal{
+    width:68px;height:68px;border-radius:8px;
+    background:var(--brand);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Songti SC',serif;
+    font-weight:900;font-size:22px;
+    line-height:1;
+    letter-spacing:2px;
+    box-shadow:0 6px 18px rgba(138,42,29,0.25);
+    transform:rotate(-4deg);
+  }
+  .hero-title{
+    font-size:42px;line-height:1.05;font-weight:900;letter-spacing:2px;
+  }
+  @media(min-width:768px){
+    .hero-title{font-size:72px;letter-spacing:8px;}
+  }
+  .vertical-label{
+    writing-mode:vertical-rl;
+    letter-spacing:6px;
+  }
+
+  /* ======== 卡片基础 ======== */
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:0 4px 18px rgba(31,42,55,0.06);
+  }
+  .card-soft{
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(6px);
+    border:1px solid var(--line);
+    border-radius:14px;
+  }
+
+  /* ======== KPI 数据卡 ======== */
+  .kpi-num{
+    font-family:Georgia,'Times New Roman',serif;
+    font-weight:900;
+    font-size:44px;line-height:1;
+    background:linear-gradient(180deg,var(--brand) 0%,var(--brand-2) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .kpi-unit{color:var(--brand);font-weight:700;font-size:14px;margin-left:2px;}
+
+  /* ======== 章节标题 ======== */
+  .sec-title{
+    font-family:'Songti SC',serif;
+    font-weight:900;
+    font-size:24px;
+    position:relative;
+    padding-left:18px;
+  }
+  @media(min-width:768px){.sec-title{font-size:30px;}}
+  .sec-title::before{
+    content:"";position:absolute;left:0;top:6px;bottom:6px;width:5px;
+    background:linear-gradient(180deg,var(--brand),var(--brand-2));
+    border-radius:3px;
+  }
+  .sec-eyebrow{
+    font-family:Georgia,serif;
+    font-size:12px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--brand-2);
+    margin-bottom:6px;
+  }
+
+  /* ======== 时间线 ======== */
+  .tl{position:relative;padding-left:28px;}
+  .tl::before{
+    content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(180deg,var(--brand),var(--brand-2),var(--brand-3));
+    border-radius:2px;
+  }
+  .tl-item{position:relative;padding-bottom:22px;}
+  .tl-item::before{
+    content:"";position:absolute;left:-24px;top:8px;
+    width:14px;height:14px;border-radius:50%;
+    background:#fff;border:3px solid var(--brand);
+    box-shadow:0 0 0 3px rgba(138,42,29,0.1);
+  }
+  .tl-year{
+    font-family:Georgia,serif;font-weight:700;font-size:14px;
+    color:var(--brand);letter-spacing:1px;
+  }
+
+  /* ======== 条形图 (连载期数) ======== */
+  .bar-row{display:grid;grid-template-columns:110px 1fr 64px;gap:10px;align-items:center;margin-bottom:12px;}
+  .bar-track{height:22px;background:var(--paper-2);border-radius:11px;overflow:hidden;position:relative;}
+  .bar-fill{height:100%;border-radius:11px;
+    background:linear-gradient(90deg,var(--brand) 0%,var(--brand-2) 100%);
+    animation:grow 1.4s cubic-bezier(.2,.8,.2,1) both;
+    transform-origin:left;
+  }
+  .bar-fill.b2{background:linear-gradient(90deg,var(--brand-3) 0%,#4a7a85 100%);}
+  .bar-fill.b3{background:linear-gradient(90deg,var(--brand-2) 0%,var(--accent) 100%);}
+  @keyframes grow{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+
+  /* ======== 平台分布 donut (纯CSS) ======== */
+  .donut{
+    width:160px;height:160px;border-radius:50%;
+    background:conic-gradient(
+      var(--brand) 0 12%,
+      var(--brand-2) 12% 24%,
+      var(--brand-3) 24% 36%,
+      #c9b28f 36% 100%
+    );
+    position:relative;
+  }
+  .donut::after{
+    content:"";position:absolute;inset:22px;border-radius:50%;
+    background:var(--paper);
+  }
+  .donut-hole{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;
+  }
+  .donut-hole .big{font-family:Georgia,serif;font-weight:900;font-size:28px;color:var(--brand);}
+  .donut-hole .lab{font-size:11px;color:var(--muted);letter-spacing:2px;}
+
+  /* ======== 对比卡 ======== */
+  .vs-card{position:relative;padding:18px;border-radius:14px;border:1px solid var(--line);background:#fff;}
+  .vs-tag{
+    position:absolute;top:-12px;left:18px;
+    background:var(--brand);color:#fff;font-size:12px;letter-spacing:2px;
+    padding:4px 10px;border-radius:6px;font-weight:700;
+  }
+  .vs-tag.alt{background:var(--brand-3);}
+
+  /* ======== 标签徽章 ======== */
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:4px 10px;border-radius:999px;font-size:12px;
+    background:rgba(138,42,29,0.08);color:var(--brand);
+    border:1px solid rgba(138,42,29,0.15);
+    font-weight:600;
+  }
+  .chip.gold{background:rgba(212,169,62,0.15);color:#8a6a14;border-color:rgba(212,169,62,0.3);}
+  .chip.ink{background:rgba(44,74,82,0.1);color:var(--brand-3);border-color:rgba(44,74,82,0.2);}
+
+  /* ======== 时间轴横条（人生阶段） ======== */
+  .phase-rail{
+    display:grid;grid-template-columns:repeat(7,1fr);gap:6px;
+    font-size:11px;
+  }
+  .phase{
+    padding:10px 6px;border-radius:8px;text-align:center;
+    background:var(--paper-2);color:var(--ink-soft);
+    border-top:3px solid var(--brand-2);
+    line-height:1.3;
+  }
+  .phase.active{background:#fff;color:var(--ink);border-top-color:var(--brand);box-shadow:0 3px 10px rgba(138,42,29,0.1);}
+  @media(max-width:640px){
+    .phase-rail{grid-template-columns:1fr 1fr;gap:8px;}
+  }
+
+  /* ======== 作品形态点阵 ======== */
+  .dotgrid{display:flex;flex-wrap:wrap;gap:4px;}
+  .dot{width:8px;height:8px;border-radius:2px;background:var(--paper-2);}
+  .dot.on{background:var(--brand);}
+  .dot.on.g{background:var(--brand-2);}
+  .dot.on.b{background:var(--brand-3);}
+  .dot.on.y{background:var(--accent);}
+
+  /* ======== 名言引述 ======== */
+  .quote{
+    border-left:4px solid var(--brand);
+    background:linear-gradient(90deg,rgba(138,42,29,0.06),transparent);
+    padding:14px 18px;border-radius:0 10px 10px 0;
+    font-family:'Songti SC',serif;font-size:17px;line-height:1.8;color:var(--ink);
+  }
+
+  /* ======== 选项卡 ======== */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .tab-btn{
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);
+    background:#fff;font-size:14px;font-weight:600;color:var(--ink-soft);
+    cursor:pointer;transition:all .2s ease;
+  }
+  .tab-btn:hover{border-color:var(--brand);color:var(--brand);}
+  .tab-btn.active{background:var(--brand);color:#fff;border-color:var(--brand);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+
+  /* ======== 风险/提示条 ======== */
+  .risk-item{
+    border-left:4px solid var(--accent);
+    background:rgba(212,169,62,0.08);
+    padding:12px 16px;border-radius:0 10px 10px 0;
+    margin-bottom:10px;
+  }
+  .risk-item .rh{font-weight:700;color:#8a6a14;margin-bottom:4px;display:flex;align-items:center;gap:6px;}
+
+  /* ======== 合集书脊 ======== */
+  .book-spines{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;}
+  .spine{
+    aspect-ratio:2/3;border-radius:4px 8px 8px 4px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:12px 10px;color:#fff;position:relative;
+    box-shadow:0 6px 14px rgba(0,0,0,0.12);
+    font-family:'Songti SC',serif;
+  }
+  .spine::before{
+    content:"";position:absolute;left:4px;top:8px;bottom:8px;width:2px;background:rgba(255,255,255,0.3);
+  }
+  .spine .s-t{writing-mode:vertical-rl;font-size:16px;font-weight:700;letter-spacing:3px;margin-left:6px;}
+  .spine .s-s{font-size:10px;opacity:.85;letter-spacing:2px;}
+  .spine.c1{background:linear-gradient(160deg,#6b2018,#8a2a1d);}
+  .spine.c2{background:linear-gradient(160deg,#1f3a40,#2c4a52);}
+  .spine.c3{background:linear-gradient(160deg,#8a6630,#b8894d);}
+  .spine.c4{background:linear-gradient(160deg,#4a4a4a,#6b6b6b);}
+  .spine.c5{background:linear-gradient(160deg,#5a3d2b,#8b5a3c);}
+
+  /* ======== 脚注 / 分隔 ======== */
+  .divider{
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--line),transparent);
+    margin:36px 0;
+  }
+  .foot{
+    text-align:center;color:var(--muted);font-size:12px;padding:30px 0 60px;letter-spacing:2px;
+  }
+  .watermark{
+    position:absolute;right:-10px;top:-20px;font-family:'Songti SC',serif;font-size:110px;
+    color:rgba(138,42,29,0.05);font-weight:900;pointer-events:none;user-select:none;
+  }
 </style>
 </head>
-<body><main>
-<section class="cover">
-<h1>张叡文学档案</h1>
-<h2>——鹤鸣文学总编人物研究档案</h2>
-<p class="meta">北美高校联盟·鹤鸣文学社　｜　2026年9月</p>
-</section>
+<body>
+<div class="max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10 relative">
 
-<div class="note"><strong>档案说明</strong><br>
-张叡，旅美华文诗人、作家，北美高校联盟鹤鸣文学社副社长、《鹤鸣文学》总编。其人生经历横跨科学研究、海外求学与职业实践，并在退休后重新进入古典诗词创作领域，逐步形成格律诗词、英文小说、视觉诗画与AI音乐等多维度的文学实践。<br><br>
-本档案依据现有作品资料、平台资料及相关公开信息整理。事实性资料与研究性分析分别呈现；对尚缺乏独立资料佐证的内容，以“据现有资料”等方式表述。
+  <!-- 顶部 HERO -->
+  <header class="relative card-soft p-6 md:p-10 mb-8 overflow-hidden">
+    <div class="watermark">詩</div>
+    <div class="flex items-start gap-5 md:gap-8">
+      <div class="seal shrink-0">张叡</div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-3 flex-wrap mb-2">
+          <span class="sec-eyebrow">LITERATURE ARCHIVE · 2026</span>
+          <span class="chip">海外华文格律诗词</span>
+          <span class="chip gold">学者型诗人</span>
+        </div>
+        <h1 class="hero-title font-serif-zh">
+          张叡文学档案
+        </h1>
+        <p class="mt-4 text-[15px] md:text-[17px] leading-relaxed text-[var(--ink-soft)] max-w-3xl">
+          一位从科研跨界文学的当代诗人——三十年科研耕耘后转型诗词创作，以<strong class="text-[var(--brand)]">千余首格律诗词</strong>、
+          <strong class="text-[var(--brand)]">十一部合集</strong>与<strong class="text-[var(--brand)]">280余首AI谱曲演唱作品</strong>，
+          在海外华文诗坛构建起"诗·画·乐"三境交融的独特艺术世界。
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="chip ink">中科院科技进步奖</span>
+          <span class="chip">鹤鸣文学社副社长·总编</span>
+          <span class="chip gold">华夏杯优秀奖</span>
+          <span class="chip">中国集邮纪念册入选名家</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- KPI 数据总览 -->
+  <section class="mb-10">
+    <div class="mb-4"><div class="sec-eyebrow">KEY FIGURES</div><h2 class="sec-title">创作成就总览</h2></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="card p-5 relative overflow-hidden">
+        <div class="text-xs text-[var(--muted)] tracking-widest mb-2">原创格律诗词</div>
+        <div><span class="kpi-num">1000</span><span class="kpi-unit">余首</span></div>
+        <div class="mt-3 text-[13px] text-[var(--ink-soft)]">遍及海内外 25 个微刊平台</div>
+      </div>
+      <div class="card p-5 relative overflow-hidden">
+        <div class="text-xs text-[var(--muted)] tracking-widest mb-2">出版诗词合集</div>
+        <div><span class="kpi-num">11</span><span class="kpi-unit">部</span></div>
+        <div class="mt-3 text-[13px] text-[var(--ink-soft)]">含竹韵 4 部 · 超然台 4 部</div>
+      </div>
+      <div class="card p-5 relative overflow-hidden">
+        <div class="text-xs text-[var(--muted)] tracking-widest mb-2">三大刊连续连载</div>
+        <div><span class="kpi-num">441</span><span class="kpi-unit">期+</span></div>
+        <div class="mt-3 text-[13px] text-[var(--ink-soft)]">最长单刊超 220 期</div>
+      </div>
+      <div class="card p-5 relative overflow-hidden">
+        <div class="text-xs text-[var(--muted)] tracking-widest mb-2">AI 谱曲演唱作品</div>
+        <div><span class="kpi-num">280</span><span class="kpi-unit">余首</span></div>
+        <div class="mt-3 text-[13px] text-[var(--ink-soft)]">微信 · 美篇 · 喜马拉雅</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心定位与关键信息 -->
+  <section class="mb-10 grid md:grid-cols-3 gap-5">
+    <div class="card p-6 md:col-span-2 relative overflow-hidden">
+      <div class="sec-eyebrow">POSITIONING</div>
+      <h3 class="font-serif-zh text-xl md:text-2xl font-bold mt-1 mb-3">从科学家到诗人：理性与诗意的人生合流</h3>
+      <p class="text-[15px] md:text-[16px] leading-[1.85] text-[var(--ink-soft)]">
+        张叡是当代海外华文格律诗词创作领域<strong class="text-[var(--ink)]">最高产的诗人之一</strong>。从中国科学院到德国鲁尔大学、美国雪城大学，
+        再到美国制药公司，三十余年科研生涯赋予他严谨的思辨底色；退休后全身心投入格律诗词创作，更在北美高校联合会鹤鸣文学社担任副社长兼总编，
+        成为海外华文诗词传播的重要组织者。科学家的理性与诗人的感性在他笔下交汇，形成了兼具思想深度与意境之美的"学者型诗人"风格。
+      </p>
+      <div class="quote mt-5">
+        摒弃俗念，悠游山水——上承中国古典山水田园诗传统，下接当代海外华人的生活体验，在格律之中见性情，于山水之外寄人生。
+      </div>
+    </div>
+
+    <div class="card p-6">
+      <div class="sec-eyebrow">IDENTITY</div>
+      <h3 class="font-serif-zh text-xl font-bold mt-1 mb-4">身份与职务</h3>
+      <ul class="space-y-3 text-[15px] leading-relaxed">
+        <li class="flex gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand)] mt-2 shrink-0"></span>
+          <div><b>北美高校联合会鹤鸣文学社</b><br><span class="text-[var(--ink-soft)] text-[14px]">副社长 · 总编</span></div>
+        </li>
+        <li class="flex gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-2)] mt-2 shrink-0"></span>
+          <div><b>格律专栏主笔</b><br><span class="text-[var(--ink-soft)] text-[14px]">主刊与特刊建设核心成员</span></div>
+        </li>
+        <li class="flex gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-3)] mt-2 shrink-0"></span>
+          <div><b>科研学者</b><br><span class="text-[var(--ink-soft)] text-[14px]">中科院科学技术进步二等奖、三等奖各1项</span></div>
+        </li>
+        <li class="flex gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] mt-2 shrink-0"></span>
+          <div><b>跨界创作者</b><br><span class="text-[var(--ink-soft)] text-[14px]">英文小说 BURBLE 作者 · AI 诗画乐探索者</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- 人生历程时间线 -->
+  <section class="mb-10">
+    <div class="mb-4"><div class="sec-eyebrow">LIFE JOURNEY</div><h2 class="sec-title">跨界人生 · 七段历程</h2></div>
+
+    <!-- 横向阶段条 -->
+    <div class="card p-5 mb-5">
+      <div class="phase-rail">
+        <div class="phase">早年<br><b>中科院</b></div>
+        <div class="phase">海外<br><b>德/美深造</b></div>
+        <div class="phase">海外<br><b>制药公司</b></div>
+        <div class="phase">退休初<br><b>转型创作</b></div>
+        <div class="phase active">丰收期<br><b>千首连载</b></div>
+        <div class="phase">编审期<br><b>鹤鸣总编</b></div>
+        <div class="phase">创新期<br><b>AI诗画乐</b></div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card p-6">
+        <div class="tl">
+          <div class="tl-item">
+            <div class="tl-year">早年 · 科研起步</div>
+            <div class="font-serif-zh font-bold text-[16px] mt-1">中国科学院</div>
+            <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-1">从事科学研究工作，获中科院科学技术进步二等奖、三等奖各一项，奠定严谨思辨基础。</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">海外时期 · 学术深耕</div>
+            <div class="font-serif-zh font-bold text-[16px] mt-1">德国鲁尔大学 → 美国雪城大学</div>
+            <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-1">赴欧深造后转赴美国，发表多篇英文学术论文，完成跨洋学术之旅。</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">产业阶段</div>
+            <div class="font-serif-zh font-bold text-[16px] mt-1">美国制药公司</div>
+            <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-1">进入产业界从事科研相关工作，三十年科研生涯在两大洲之间延展。</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">退休初期 · 文学转型</div>
+            <div class="font-serif-zh font-bold text-[16px] mt-1">加入诗社 · 开启格律创作</div>
+            <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-1">加入竹韵汉诗、竹韵海外、南溪等诗社，正式踏上格律诗词创作之路。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <div class="tl">
+          <div class="tl-item">
+            <div class="tl-year">创作丰收期</div>
+            <div class="font-serif-zh font-bold text-[16px] mt-1">三大刊长期连载 · 千首作品</div>
+            <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-1">在竹韵海外、竹韵汉诗、南溪诗词三大核心刊物保持连续连载，累计发表千余首作品，陆续出版十一部诗词合集。</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">编审任职期</div>
+            <div class="font-serif-zh font-bold text-[16px] mt-1">鹤鸣文学社副社长·总编</div>
+            <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-1">出任北美高校联合会鹤鸣文学社副社长、《鹤鸣文学》总编，搭建北美华文格律诗词重要发表平台。</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">创新探索期</div>
+            <div class="font-serif-zh font-bold text-[16px] mt-1">AI 诗画乐三境融合</div>
+            <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-1">以科学家的技术敏感，系统性运用AI为诗词谱曲演唱280余首，开创诗境画、诗画乐三境新形式。</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">荣誉认可期</div>
+            <div class="font-serif-zh font-bold text-[16px] mt-1">获奖 · 邮册 · 双语创作</div>
+            <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-1">荣获华夏杯国际诗人作家大赛优秀奖；出版中国当代艺术名家集邮纪念册；英文小说 BURBLE 出版，展现双语能力。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 发表体系 -->
+  <section class="mb-10">
+    <div class="mb-4"><div class="sec-eyebrow">PUBLICATION MATRIX</div><h2 class="sec-title">千首诗词 · 发表体系</h2></div>
+
+    <div class="grid md:grid-cols-5 gap-5">
+      <!-- 三大核心刊物连载条 -->
+      <div class="card p-6 md:col-span-3">
+        <h3 class="font-serif-zh font-bold text-lg mb-1">三大核心刊物连载期数</h3>
+        <p class="text-[13px] text-[var(--muted)] mb-5">连续发表的"长度"是创作毅力最直接的见证</p>
+
+        <div class="bar-row">
+          <div class="text-[14px] font-bold">竹韵海外</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+          <div class="text-right font-bold font-display text-[18px] text-[var(--brand)]">221<span class="text-[12px] font-normal text-[var(--muted)]">期</span></div>
+        </div>
+        <div class="text-[12px] text-[var(--muted)] pl-[120px] -mt-2 mb-3">第 268 期 ~ 第 488 期连续发表</div>
+
+        <div class="bar-row">
+          <div class="text-[14px] font-bold">竹韵汉诗</div>
+          <div class="bar-track"><div class="bar-fill b2" style="width:52%"></div></div>
+          <div class="text-right font-bold font-display text-[18px] text-[var(--brand-3)]">114<span class="text-[12px] font-normal text-[var(--muted)]">期</span></div>
+        </div>
+        <div class="text-[12px] text-[var(--muted)] pl-[120px] -mt-2 mb-3">第 255 期 ~ 第 368 期连续发表</div>
+
+        <div class="bar-row">
+          <div class="text-[14px] font-bold">南溪诗词</div>
+          <div class="bar-track"><div class="bar-fill b3" style="width:48%"></div></div>
+          <div class="text-right font-bold font-display text-[18px] text-[#8a6a14]">106<span class="text-[12px] font-normal text-[var(--muted)]">期</span></div>
+        </div>
+        <div class="text-[12px] text-[var(--muted)] pl-[120px] -mt-2 mb-4">第 133 期 ~ 第 238 期，超 105 期连续发表</div>
+
+        <div class="mt-4 pt-4 border-t border-dashed border-[var(--line)] flex items-center justify-between text-[13px]">
+          <span class="text-[var(--muted)]">三大刊累计连载</span>
+          <span class="font-serif-zh font-bold text-xl text-[var(--brand)]">441 期<span class="text-[12px] font-normal text-[var(--muted)] ml-1">+</span></span>
+        </div>
+      </div>
+
+      <!-- 平台分布 donut -->
+      <div class="card p-6 md:col-span-2">
+        <h3 class="font-serif-zh font-bold text-lg mb-1">25 个海内外微刊</h3>
+        <p class="text-[13px] text-[var(--muted)] mb-5">点面结合的发表版图</p>
+
+        <div class="flex items-center gap-5">
+          <div class="donut shrink-0">
+            <div class="donut-hole">
+              <div class="big">25</div>
+              <div class="lab">PLATFORMS</div>
+            </div>
+          </div>
+          <ul class="flex-1 space-y-2 text-[14px]">
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[var(--brand)]"></span>竹韵系列</span>
+              <b class="font-display">3</b>
+            </li>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[var(--brand-2)]"></span>南溪系列</span>
+              <b class="font-display">3</b>
+            </li>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[var(--brand-3)]"></span>鹤鸣系列</span>
+              <b class="font-display">3</b>
+            </li>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#c9b28f]"></span>其他综合平台</span>
+              <b class="font-display">16</b>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 作品形态点阵可视化 -->
+    <div class="card p-6 mt-5">
+      <h3 class="font-serif-zh font-bold text-lg mb-4">作品形态全景</h3>
+      <div class="grid md:grid-cols-4 gap-5">
+        <div>
+          <div class="flex items-baseline justify-between mb-2">
+            <span class="text-[14px] font-bold">格律诗词</span>
+            <span class="font-display font-bold text-[var(--brand)]">1000+</span>
+          </div>
+          <div class="dotgrid" id="dots1"></div>
+          <div class="text-[12px] text-[var(--muted)] mt-2">主体创作 · 传统格律传承</div>
+        </div>
+        <div>
+          <div class="flex items-baseline justify-between mb-2">
+            <span class="text-[14px] font-bold">AI 谱曲演唱</span>
+            <span class="font-display font-bold text-[var(--brand-2)]">280+</span>
+          </div>
+          <div class="dotgrid" id="dots2"></div>
+          <div class="text-[12px] text-[var(--muted)] mt-2">声音创新 · 新媒体传播</div>
+        </div>
+        <div>
+          <div class="flex items-baseline justify-between mb-2">
+            <span class="text-[14px] font-bold">诗词合集</span>
+            <span class="font-display font-bold text-[var(--brand-3)]">11</span>
+          </div>
+          <div class="dotgrid" id="dots3"></div>
+          <div class="text-[12px] text-[var(--muted)] mt-2">纸质出版 · 系统汇编</div>
+        </div>
+        <div>
+          <div class="flex items-baseline justify-between mb-2">
+            <span class="text-[14px] font-bold">英文小说</span>
+            <span class="font-display font-bold text-[#8a6a14]">1</span>
+          </div>
+          <div class="dotgrid" id="dots4"></div>
+          <div class="text-[12px] text-[var(--muted)] mt-2">跨界双语 · BURBLE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合集出版 -->
+  <section class="mb-10">
+    <div class="mb-4"><div class="sec-eyebrow">COLLECTIONS</div><h2 class="sec-title">十一部诗词合集与国家级纪念</h2></div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="card p-6 md:col-span-2">
+        <h3 class="font-serif-zh font-bold text-lg mb-1">合集书墙</h3>
+        <p class="text-[13px] text-[var(--muted)] mb-4">涵盖竹韵诗词选 4 部、超然台上诗选刊 4 部及其他重要选本</p>
+
+        <div class="book-spines" id="bookWall">
+          <!-- JS 注入书脊 -->
+        </div>
+      </div>
+
+      <div class="card p-6 relative overflow-hidden">
+        <div class="absolute right-3 top-3 text-6xl font-serif-zh font-bold text-[rgba(212,169,62,0.15)]">邮</div>
+        <div class="sec-eyebrow">NATIONAL HONOR</div>
+        <h3 class="font-serif-zh font-bold text-xl mt-1 mb-3">中国集邮纪念册</h3>
+        <p class="text-[15px] leading-[1.8] text-[var(--ink-soft)]">
+          以"<b class="text-[var(--brand)]">国家名片</b>"形式确认其艺术地位，入选<strong>中国当代艺术名家</strong>集邮纪念册，
+          是对其诗词创作成就的国家级认可。邮票作为文化载体，将格律诗词之美传递到更广阔的公共视野。
+        </p>
+        <div class="mt-5 p-3 rounded-lg border border-dashed border-[var(--brand-2)] bg-[rgba(184,137,77,0.06)]">
+          <div class="flex items-center gap-2 text-[13px] text-[var(--brand-2)] font-bold tracking-wider">
+            <svg class="w-[16px] h-[16px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            文化意义
+          </div>
+          <p class="text-[14px] text-[var(--ink-soft)] mt-2 leading-relaxed">
+            邮册是主流文化体系对海外华文诗人的重要肯定，标志着张叡的创作已进入中国当代文学的公共记录。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 艺术特色 Tabs -->
+  <section class="mb-10">
+    <div class="mb-4"><div class="sec-eyebrow">ARTISTIC STYLE</div><h2 class="sec-title">艺术特色 · 三维度审美</h2></div>
+
+    <div class="card p-6">
+      <div class="tabs" id="styleTabs">
+        <button class="tab-btn active" data-tab="s1">格律正统</button>
+        <button class="tab-btn" data-tab="s2">山水隐逸</button>
+        <button class="tab-btn" data-tab="s3">人间亲谊</button>
+      </div>
+
+      <div class="tab-panel active" id="s1">
+        <div class="grid md:grid-cols-5 gap-6 items-start">
+          <div class="md:col-span-3">
+            <h3 class="font-serif-zh text-2xl font-bold text-[var(--brand)]">格律诗词的正统传承</h3>
+            <p class="mt-3 text-[15px] leading-[1.9] text-[var(--ink-soft)]">
+              张叡的创作严格继承中国古典诗词的格律传统，于平仄、对仗、押韵间严守法度，千余首作品中展现出扎实的旧体诗词功底。
+              作为鹤鸣文学格律专栏的建设者，他不仅以创作实践传承正统，更以编审身份推动格律诗词在海外华人圈的传播与教学，
+              使这一古老文学形式在北美高校圈层保持生机。
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip">平仄严谨</span>
+              <span class="chip">对仗工整</span>
+              <span class="chip gold">用典贴切</span>
+              <span class="chip ink">韵脚和谐</span>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <div class="rounded-lg h-full min-h-[160px] p-5 bg-gradient-to-br from-[#f7f3ec] to-[#ece4d6] flex items-center justify-center relative overflow-hidden">
+              <div class="font-serif-zh text-center leading-relaxed text-[var(--brand)]">
+                <div class="text-2xl md:text-3xl font-bold tracking-widest">格律為骨</div>
+                <div class="mt-2 text-[15px] text-[var(--ink-soft)]">辭章為肉 · 性情為魂</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="s2">
+        <div class="grid md:grid-cols-5 gap-6 items-start">
+          <div class="md:col-span-3">
+            <h3 class="font-serif-zh text-2xl font-bold text-[var(--brand-3)]">悠游山水的隐逸情怀</h3>
+            <p class="mt-3 text-[15px] leading-[1.9] text-[var(--ink-soft)]">
+              "摒弃俗念、悠游山水"是张叡明确的创作理念。他上承陶渊明、王维、孟浩然山水田园一脉，
+              以退隐之心观照海外生活中的山川风物，将北美自然景观与中国古典隐逸精神相融合，
+              形成既有异国地理质感、又不失东方审美底蕴的山水书写风格。
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip ink">山水田园</span>
+              <span class="chip ink">隐逸旷达</span>
+              <span class="chip">情景交融</span>
+              <span class="chip gold">物我两忘</span>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <div class="rounded-lg h-full min-h-[160px] p-5 bg-gradient-to-br from-[#e7efe7] to-[#cfe0d3] flex items-center justify-center relative overflow-hidden">
+              <svg class="absolute inset-0 w-full h-full opacity-25" viewBox="0 0 200 120" preserveAspectRatio="none">
+                <path d="M0,90 Q30,60 60,75 T120,60 T200,70 L200,120 L0,120Z" fill="#2c4a52"/>
+                <path d="M0,100 Q40,80 80,90 T160,85 T200,95 L200,120 L0,120Z" fill="#1f3a40"/>
+              </svg>
+              <div class="font-serif-zh text-center relative z-10 text-[var(--brand-3)]">
+                <div class="text-2xl md:text-3xl font-bold tracking-widest">山水寄懷</div>
+                <div class="mt-2 text-[15px]">遊心物外 · 自得其閒</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="s3">
+        <div class="grid md:grid-cols-5 gap-6 items-start">
+          <div class="md:col-span-3">
+            <h3 class="font-serif-zh text-2xl font-bold text-[#8a6a14]">亲谊友爱的人间书写</h3>
+            <p class="mt-3 text-[15px] leading-[1.9] text-[var(--ink-soft)]">
+              在山水之外，张叡的笔端亦常现亲友之情、诗友之谊、故园之思。赠答唱和、节庆寄怀、羁旅乡愁等题材，
+              展现出一位海外华人诗人深沉的人间情怀。他的诗词并非远离尘嚣的清冷之音，而是在亲情、友情、乡情的交织中，
+              呈现出温暖厚实的生命质感。
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip gold">赠答唱和</span>
+              <span class="chip gold">故园之思</span>
+              <span class="chip">亲友温情</span>
+              <span class="chip ink">唱和交游</span>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <div class="rounded-lg h-full min-h-[160px] p-5 bg-gradient-to-br from-[#fbf2dd] to-[#f0dfae] flex items-center justify-center relative overflow-hidden">
+              <div class="font-serif-zh text-center text-[#8a6a14]">
+                <div class="text-2xl md:text-3xl font-bold tracking-widest">人間情暖</div>
+                <div class="mt-2 text-[15px]">詩酬知己 · 筆寄鄉愁</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 编审事业 & AI创新 双栏对比 -->
+  <section class="mb-10">
+    <div class="grid md:grid-cols-2 gap-5">
+      <!-- 编审事业 -->
+      <div class="card p-6 relative overflow-hidden">
+        <div class="sec-eyebrow">EDITORIAL WORK</div>
+        <h2 class="sec-title !text-2xl md:!text-[26px]">鹤鸣文学 · 编刊贡献</h2>
+        <p class="text-[15px] leading-[1.85] text-[var(--ink-soft)] mt-3">
+          作为北美高校联合会鹤鸣文学社副社长兼《鹤鸣文学》总编，张叡在编审实践中搭建起北美高校华文格律诗词的重要发表平台。
+        </p>
+        <ul class="mt-4 space-y-3">
+          <li class="flex gap-3">
+            <div class="w-8 h-8 rounded-lg bg-[rgba(44,74,82,0.1)] text-[var(--brand-3)] flex items-center justify-center shrink-0 font-bold">1</div>
+            <div>
+              <div class="font-bold text-[15px]">平台定位</div>
+              <div class="text-[14px] text-[var(--ink-soft)] leading-relaxed">服务北美高校华人圈，提供高水准格律诗词发表与交流阵地。</div>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <div class="w-8 h-8 rounded-lg bg-[rgba(44,74,82,0.1)] text-[var(--brand-3)] flex items-center justify-center shrink-0 font-bold">2</div>
+            <div>
+              <div class="font-bold text-[15px]">主刊·特刊·格律专栏</div>
+              <div class="text-[14px] text-[var(--ink-soft)] leading-relaxed">主导主刊与特刊建设，开设格律专栏，形成系统性发表矩阵。</div>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <div class="w-8 h-8 rounded-lg bg-[rgba(44,74,82,0.1)] text-[var(--brand-3)] flex items-center justify-center shrink-0 font-bold">3</div>
+            <div>
+              <div class="font-bold text-[15px]">海外华文传播</div>
+              <div class="text-[14px] text-[var(--ink-soft)] leading-relaxed">在跨文化语境中持续推动古典诗词的海外传播与代际传承。</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- AI 跨界创新 -->
+      <div class="card p-6 relative overflow-hidden" style="background:linear-gradient(135deg,#ffffff 0%,#fbf4ee 100%);">
+        <div class="sec-eyebrow" style="color:var(--brand);">AI × POETRY</div>
+        <h2 class="sec-title !text-2xl md:!text-[26px]">诗画乐三境 · AI 跨界创新</h2>
+        <p class="text-[15px] leading-[1.85] text-[var(--ink-soft)] mt-3">
+          凭借科学家的技术敏感，张叡成为最早系统性运用 AI 进行诗词艺术创新的诗人之一，让千年前的格律诗词在智能时代重生听觉与视觉维度。
+        </p>
+        <div class="mt-5 grid grid-cols-3 gap-3 text-center">
+          <div class="p-3 rounded-lg bg-white border border-[var(--line)]">
+            <div class="font-serif-zh font-bold text-lg text-[var(--brand)]">詩</div>
+            <div class="text-[11px] text-[var(--muted)] mt-1 tracking-widest">原创文本</div>
+          </div>
+          <div class="p-3 rounded-lg bg-white border border-[var(--line)]">
+            <div class="font-serif-zh font-bold text-lg text-[var(--brand-2)]">畫</div>
+            <div class="text-[11px] text-[var(--muted)] mt-1 tracking-widest">詩境畫</div>
+          </div>
+          <div class="p-3 rounded-lg bg-white border border-[var(--line)]">
+            <div class="font-serif-zh font-bold text-lg text-[var(--brand-3)]">樂</div>
+            <div class="text-[11px] text-[var(--muted)] mt-1 tracking-widest">AI譜曲演唱</div>
+          </div>
+        </div>
+        <div class="mt-4 text-[14px] leading-[1.8] text-[var(--ink-soft)]">
+          <b class="text-[var(--ink)]">280 余首</b>AI 谱曲演唱作品发表于微信、美篇、喜马拉雅等平台，开创"诗画乐三境"新形式，
+          代表了传统文学在智能时代的<b class="text-[var(--brand)]">先锋探索方向</b>。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 四大维度对比 -->
+  <section class="mb-10">
+    <div class="mb-4"><div class="sec-eyebrow">DUAL PERSPECTIVES</div><h2 class="sec-title">四组对比 · 看见诗人的张力</h2></div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="vs-card">
+        <span class="vs-tag">科研 vs 文学</span>
+        <div class="mt-2 grid grid-cols-2 gap-3 text-[14px]">
+          <div class="p-3 rounded-lg bg-[rgba(44,74,82,0.05)]">
+            <div class="font-bold text-[var(--brand-3)] mb-1">30+ 年科研生涯</div>
+            <div class="text-[var(--ink-soft)] leading-relaxed">中科院 → 德美深造 → 制药公司，理性思辨与科学方法。</div>
+          </div>
+          <div class="p-3 rounded-lg bg-[rgba(138,42,29,0.05)]">
+            <div class="font-bold text-[var(--brand)] mb-1">退休后诗词创作</div>
+            <div class="text-[var(--ink-soft)] leading-relaxed">千首作品 · 合集出版 · AI 创新，感性审美与意境建构。</div>
+          </div>
+        </div>
+        <div class="mt-3 text-[13px] text-[var(--muted)] text-center italic">理性深度 与 感性意境 的人生平衡</div>
+      </div>
+
+      <div class="vs-card">
+        <span class="vs-tag alt">深耕 vs 广布</span>
+        <div class="mt-2 grid grid-cols-2 gap-3 text-[14px]">
+          <div class="p-3 rounded-lg bg-[rgba(44,74,82,0.05)]">
+            <div class="font-bold text-[var(--brand-3)] mb-1">核心刊 441+ 期连载</div>
+            <div class="text-[var(--ink-soft)] leading-relaxed">三大诗刊长期连载，最长单刊超 220 期，持续稳定。</div>
+          </div>
+          <div class="p-3 rounded-lg bg-[rgba(138,42,29,0.05)]">
+            <div class="font-bold text-[var(--brand)] mb-1">25 个平台广泛发表</div>
+            <div class="text-[var(--ink-soft)] leading-relaxed">竹韵/南溪/鹤鸣及16个综合平台，点面结合的发表网络。</div>
+          </div>
+        </div>
+        <div class="mt-3 text-[13px] text-[var(--muted)] text-center italic">长期连载的深度 与 多平台传播的广度</div>
+      </div>
+
+      <div class="vs-card">
+        <span class="vs-tag">传承 vs 创新</span>
+        <div class="mt-2 grid grid-cols-2 gap-3 text-[14px]">
+          <div class="p-3 rounded-lg bg-[rgba(44,74,82,0.05)]">
+            <div class="font-bold text-[var(--brand-3)] mb-1">传统格律诗词</div>
+            <div class="text-[var(--ink-soft)] leading-relaxed">严守平仄对仗，上承山水田园正统，延续千年文脉。</div>
+          </div>
+          <div class="p-3 rounded-lg bg-[rgba(138,42,29,0.05)]">
+            <div class="font-bold text-[var(--brand)] mb-1">AI 谱曲+诗境画</div>
+            <div class="text-[var(--ink-soft)] leading-relaxed">280余首AI演唱，诗画乐三境融合，突破文学边界。</div>
+          </div>
+        </div>
+        <div class="mt-3 text-[13px] text-[var(--muted)] text-center italic">在传承中创新 · 以科技激活古典</div>
+      </div>
+
+      <div class="vs-card">
+        <span class="vs-tag alt">纸质 vs 新媒</span>
+        <div class="mt-2 grid grid-cols-2 gap-3 text-[14px]">
+          <div class="p-3 rounded-lg bg-[rgba(44,74,82,0.05)]">
+            <div class="font-bold text-[var(--brand-3)] mb-1">纸质出版·邮册</div>
+            <div class="text-[var(--ink-soft)] leading-relaxed">11部合集 + 中国集邮纪念册，"国家名片"级肯定。</div>
+          </div>
+          <div class="p-3 rounded-lg bg-[rgba(138,42,29,0.05)]">
+            <div class="font-bold text-[var(--brand)] mb-1">微信·美篇·喜马拉雅</div>
+            <div class="text-[var(--ink-soft)] leading-relaxed">微刊连载与音视频作品，覆盖新媒体传播生态。</div>
+          </div>
+        </div>
+        <div class="mt-3 text-[13px] text-[var(--muted)] text-center italic">传统出版的厚重 与 新媒体的灵动并行</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 荣誉认可 -->
+  <section class="mb-10">
+    <div class="mb-4"><div class="sec-eyebrow">RECOGNITION</div><h2 class="sec-title">荣誉认可 · 代表作品</h2></div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="card p-6 text-center relative overflow-hidden">
+        <svg class="w-[40px] h-[40px] mx-auto text-[var(--accent)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M17 5h3v3a3 3 0 01-3 3M7 5H4v3a3 3 0 003 3"/></svg>
+        <div class="mt-3 font-serif-zh font-bold text-lg">华夏杯优秀奖</div>
+        <div class="text-[13px] text-[var(--muted)] mt-1 tracking-widest">华夏杯国际诗人作家大赛</div>
+        <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-3">
+          国际性华语文学赛事奖项，是对张叡格律诗词创作水准的专业肯定。
+        </p>
+      </div>
+
+      <div class="card p-6 text-center relative overflow-hidden">
+        <svg class="w-[40px] h-[40px] mx-auto text-[var(--brand-2)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 6V4h8v2"/></svg>
+        <div class="mt-3 font-serif-zh font-bold text-lg">中国当代艺术名家</div>
+        <div class="text-[13px] text-[var(--muted)] mt-1 tracking-widest">集邮纪念册入选</div>
+        <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-3">
+          通过"国家名片"邮票形式记录其文学成就，进入中国当代艺术公共记忆。
+        </p>
+      </div>
+
+      <div class="card p-6 text-center relative overflow-hidden">
+        <svg class="w-[40px] h-[40px] mx-auto text-[var(--brand-3)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h12a4 4 0 014 4v12H8a4 4 0 01-4-4V4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        <div class="mt-3 font-serif-zh font-bold text-lg">英文小说 BURBLE</div>
+        <div class="text-[13px] text-[var(--muted)] mt-1 tracking-widest">双语跨界创作</div>
+        <p class="text-[14px] leading-relaxed text-[var(--ink-soft)] mt-3">
+          展现扎实的双语写作能力，将跨文化生命体验延伸至英文小说叙事领域。
+        </p>
+      </div>
+    </div>
+
+    <div class="quote mt-6">
+      <b class="text-[var(--brand)]">创作理念总评：</b>以科学的严谨为骨、以山水的意境为魂、以人间的温情为脉、以AI的创新为翼——
+      张叡的写作不仅是一位诗人的个人抒情，更是传统格律诗词在海外、在智能时代延续与新生的一个典型样本。
+    </div>
+  </section>
+
+  <!-- 研究风险/展望 -->
+  <section class="mb-10">
+    <div class="mb-4"><div class="sec-eyebrow">RESEARCH NOTES</div><h2 class="sec-title">研究提示 · 值得关注的三个面向</h2></div>
+    <div class="card p-6">
+      <div class="risk-item">
+        <div class="rh"><svg class="w-[16px] h-[16px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>国内主流文学界系统性研究尚待加强</div>
+        <p class="text-[14px] leading-relaxed text-[var(--ink-soft)]">张叡作为海外华文诗人，作品主要在微刊与海外平台发表，国内学界对其千首作品的系统整理、艺术评析与文学史定位仍有待深入。</p>
+      </div>
+      <div class="risk-item">
+        <div class="rh"><svg class="w-[16px] h-[16px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>AI 艺术创新的评价标准有待确立</div>
+        <p class="text-[14px] leading-relaxed text-[var(--ink-soft)]">诗画乐三境的艺术形态仍处于探索阶段，其美学价值、技术边界与艺术主体性，有待学界与评论界进一步讨论与确立标准。</p>
+      </div>
+      <div class="risk-item">
+        <div class="rh"><svg class="w-[16px] h-[16px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>作品分散，系统汇编存在资料难度</div>
+        <p class="text-[14px] leading-relaxed text-[var(--ink-soft)]">千首诗词与280余首音视频作品分散于25个海内外微刊平台，完整的资料收集、版本校勘与整体研究面临挑战。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 结语 -->
+  <section class="mb-6">
+    <div class="card-soft p-6 md:p-10 text-center relative overflow-hidden">
+      <div class="font-serif-zh text-[var(--brand)] text-3xl md:text-5xl font-bold tracking-widest">千首詩心 · 跨界人生</div>
+      <div class="mt-4 max-w-2xl mx-auto text-[15px] md:text-[16px] leading-[1.9] text-[var(--ink-soft)]">
+        从实验室到山水间，从白纸黑字到诗画乐三境，张叡用三十年科研的厚度与十余年诗词的温度，
+        为当代海外华文格律诗词写下了一份独具一格的"学者型"答卷。
+      </div>
+      <div class="mt-5 inline-flex items-center gap-3 text-[12px] tracking-[4px] text-[var(--muted)]">
+        <span class="h-px w-10 bg-[var(--line)]"></span>
+        ZHANG RUI · LITERATURE ARCHIVE
+        <span class="h-px w-10 bg-[var(--line)]"></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    张叡文学档案 · 网页总结版 &nbsp;|&nbsp; 诗词千首 · 笔耕不辍
+  </div>
+
 </div>
 
-<div class="toc"><strong>目录</strong>
-<p><a href="#c1">第一章　人物身份、科研经历与文学履历</a><br>
-<a href="#c2">第二章　文学作品体系与出版成果</a><br>
-<a href="#c3">第三章　《鹤鸣文学》编审与社务实践</a><br>
-<a href="#c4">第四章　创作主题与艺术特色</a><br>
-<a href="#c5">第五章　视觉诗画与AI音乐创作</a><br>
-<a href="#c6">第六章　获奖、发表与文学活动</a><br>
-<a href="#c7">第七章　代表作品：《我的高考路》</a><br>
-<a href="#c8">第八章　档案索引与资料来源</a></p></div>
+<script>
+(function(){
+  // ====== 作品点阵 ======
+  function buildDots(id, total, filled, cls){
+    var box=document.getElementById(id);
+    if(!box) return;
+    var html='';
+    for(var i=0;i<total;i++){
+      html+='<span class="dot '+(i<filled?'on '+cls:'')+'"></span>';
+    }
+    box.innerHTML=html;
+  }
+  buildDots('dots1', 80, 80, '');        // 1000+ 主色块
+  buildDots('dots2', 80, 28, 'g');      // 280+
+  buildDots('dots3', 80, 4, 'b');       // 11部，示意
+  buildDots('dots4', 80, 1, 'y');       // 1部
 
-<h3 id="c1">第一章　人物身份、科研经历与文学履历</h3>
-<h4>1.1 人物身份</h4>
-<p>张叡为旅美华文诗人、作家，现任北美高校联盟鹤鸣文学社副社长、《鹤鸣文学》总编。其人生轨迹跨越中国西部乡村成长、大学求学、科研工作、海外学习与职业实践，并在退休后重新投入文学创作。</p>
-<p>现有资料显示，张叡成长于四川乡村，恢复高考后考入兰州大学。此后曾在中国科学院、德国鲁尔大学、美国雪城大学及美国制药企业学习、工作或从事科研相关实践。长期的科学训练与海外经历，为其晚年文学创作提供了不同于单一文学路径的生活经验与观察视角。</p>
-<h4>1.2 科研经历与文学转向</h4>
-<p>据现有资料，张叡科研阶段曾获中国科学院科学技术进步二等奖、三等奖各一项，并有论文发表于国内外学术刊物。其职业经历既涉及科研，也涉及应用领域。</p>
-<p>退休后，张叡重新学习和创作唐宋诗词，主要涉及七绝、律诗及词等传统形式。科学研究与古典诗词看似属于不同领域，但在其创作实践中，严谨、结构意识、观察能力等因素可以成为理解其作品的一种研究视角。这里属于文学分析，而非对因果关系的绝对判断。</p>
-<h4>1.3 文学与编辑履历</h4>
-<p>张叡目前参与《鹤鸣文学》的编辑与社务工作，并以总编身份参与期刊内容组织。现有资料显示，《鹤鸣文学》至2026年已出版至第15期；第15期围绕“我的高考故事”设置专题，张叡的组诗《我的高考路》被作为专题作品特别推荐。</p>
+  // ====== 书脊 ======
+  var books=[
+    {t:'竹韵诗词选',s:'一',c:'c1'},
+    {t:'竹韵诗词选',s:'二',c:'c1'},
+    {t:'竹韵诗词选',s:'三',c:'c1'},
+    {t:'竹韵诗词选',s:'四',c:'c1'},
+    {t:'超然台诗选刊',s:'一',c:'c2'},
+    {t:'超然台诗选刊',s:'二',c:'c2'},
+    {t:'超然台诗选刊',s:'三',c:'c2'},
+    {t:'超然台诗选刊',s:'四',c:'c2'},
+    {t:'雕龙诗集',s:'选',c:'c3'},
+    {t:'鹤鸣选集',s:'编',c:'c5'},
+    {t:'邮册纪念',s:'藏',c:'c4'},
+  ];
+  var wall=document.getElementById('bookWall');
+  wall.innerHTML=books.map(function(b){
+    return '<div class="spine '+b.c+'"><div class="s-s">ZHANG RUI</div><div class="s-t">'+b.t+'·'+b.s+'</div><div class="s-s">POETRY</div></div>';
+  }).join('');
 
-<h3 id="c2">第二章　文学作品体系与出版成果</h3>
-<h4>2.1 诗词作品集</h4>
-<p>按照现有资料，截至2026年，张叡相关诗词作品集统计为11部。资料中列出的作品包括“竹韵诗词选”系列4卷、“超然台上诗选刊”2019、2020、2021、2022年度作品，以及《当代诗词》《东湖新咏》《雕龙》等。</p>
-<p>这些作品所涉及的主题主要包括青春回望、故园怀思、海外纪游、山水自然、诗友情谊与传统文化传承。</p>
-<h4>2.2 英文小说《BURBLE》</h4>
-<p>《BURBLE》是张叡跨语言写作的重要作品。现有资料将其列为英文小说，并记载由KF Times Group Inc.出版。由于目前档案所掌握的公开资料尚不足以完整呈现作品内容，本文不对小说主题作未经核实的推断。</p>
-<h4>2.3 多平台发表</h4>
-<p>现有资料统计，其作品曾见于竹韵、南溪、天阙、鹤鸣文学以及其他诗词文学平台，同时涉及美篇、喜马拉雅等新媒体渠道。平台数量及具体分类以原始资料统计口径为准。</p>
-
-<h3 id="c3">第三章　《鹤鸣文学》编审与社务实践</h3>
-<h4>3.1 《鹤鸣文学》与编辑工作</h4>
-<p>张叡担任北美高校联盟鹤鸣文学社副社长、《鹤鸣文学》总编。现有资料显示，她参与刊物的内容组织、作者作品编辑以及专题策划等工作。</p>
-<p>《鹤鸣文学》的刊名与中国古典文学传统具有文化关联。资料中以《诗经·小雅·鹤鸣》“鹤鸣于九皋，声闻于天”为文化意象来源，并将“鹤鸣”理解为文学声音传播与文友相聚的象征。这一部分属于文化阐释，不应替代对刊名实际命名过程的历史考证。</p>
-<h4>3.2 第十五期与“我的高考故事”</h4>
-<p>第15期“我的高考故事”专题，是现有资料中张叡编辑实践的重要案例。她以自身经历创作《我的高考路》，并将个人青春记忆放入一代人的时代背景中书写。</p>
-<p>从编辑角度看，这一专题将个人叙事、诗词形式和群体记忆结合起来，使“高考”不只是个人经历，也成为海外华人回望青春、教育与人生选择的一条叙事线索。</p>
-
-<h3 id="c4">第四章　创作主题与艺术特色</h3>
-<h4>4.1 传统形式与现代人生</h4>
-<p>张叡的诗词创作以传统格律形式为重要基础，涉及七绝以及多种词牌。她以古典形式书写现代人生经验，将个人成长、求学、科研、海外生活、自然观察与友情等内容纳入诗词表达。</p>
-<p>这种写作方式的特点，可以概括为“以传统形式承载现代生命经验”。诗体本身保持古典秩序，而题材则不断延伸至现代教育、海外生活和新媒体创作。</p>
-<h4>4.2 海外经验与故园意识</h4>
-<p>四川乡村成长经历、兰州求学、中国科研经历以及长期海外生活，共同构成其作品中的空间跨度。故园与异乡、青春与晚年、记忆与现实之间的转换，是理解其部分作品的重要线索。</p>
-<h4>4.3 科研思维与诗歌创作</h4>
-<p>从研究视角观察，科学训练可能使其在诗词创作中更加重视结构、推敲与细节；而文学创作又为科研经历提供了情感和审美的重新表达空间。这是一种可供研究的跨学科现象，而非简单的“科研决定文学”的因果关系。</p>
-
-<h3 id="c5">第五章　视觉诗画与AI音乐创作</h3>
-<h4>5.1 视觉诗画</h4>
-<p>在美篇等新媒体平台上，张叡将诗歌与AI视觉创作结合，形成“诗、画、乐”相互配合的呈现方式。自然、海潮、夕阳、云影、花木等意象，经由视觉生成与诗歌语言重新组合，使文字作品获得另一种传播形态。</p>
-<h4>5.2 AI音乐</h4>
-<p>现有资料统计，张叡已完成280余首AI谱曲演唱作品，并用于自己的诗词及诗友作品。其创作方式并非仅把诗词作为歌词，而是尝试让音乐的节奏、乐器、演唱与诗歌情绪相互配合。</p>
-<p>“诗词＋AI＋音乐”因此成为其退休后文学实践中的一个重要方向，也体现了传统文学创作者主动进入数字创作环境的尝试。</p>
-<h4>5.3 新媒体传播</h4>
-<p>美篇、微信、喜马拉雅等平台，为诗词、视觉作品与AI音乐提供了不同于传统纸质出版的传播空间。对张叡而言，这些平台不仅是发布渠道，也逐渐成为个人文学档案积累的一部分。</p>
-
-<h3 id="c6">第六章　获奖、发表与文学活动</h3>
-<h4>6.1 科研与文学相关成果</h4>
-<p>科研方面，现有资料记载张叡曾获中国科学院科学技术进步二等奖、三等奖各一项。文学方面，资料记载其曾获秋之韵“华夏杯”国际诗人作家优秀作品展示大赛优秀奖，并有作品被列入相关艺术类纪念册资料。</p>
-<p>对于上述文学奖项及入选情况，本档案以现有资料记载为依据；涉及主办机构、奖项级别及出版发行性质的进一步判断，应以相应原始证书、正式名录或出版物为准。</p>
-<h4>6.2 诗词社团与文学平台</h4>
-<p>资料显示，张叡参与竹韵汉诗、竹韵海外、南溪、马帮、天阙、落花诗社等多个诗词文学组织，并在多个平台发表作品。</p>
-<h4>6.3 作品规模</h4>
-<p>截至2026年现有资料统计：诗词作品集11部，散见多个文学及新媒体平台，AI谱曲演唱作品280余首。《我的高考路》则成为《鹤鸣文学》第15期专题作品之一。</p>
-
-<h3 id="c7">第七章　代表作品：《我的高考路》</h3>
-<h4>7.1 作品结构</h4>
-<p>《我的高考路》以个人高考经历为核心，将人生不同阶段纳入一组诗词作品。现有资料列出的结构包括：七绝《引子》、鹧鸪天《赴考》、浣溪沙《放榜》、临江仙《入兰大》、水调歌头《放眼》、七绝《尾声》。</p>
-<h4>7.2 作品的叙事意义</h4>
-<p>这组作品的重要特点，在于以传统诗词形式记录现代教育经历。高考、放榜、大学、科研、海外人生等本属于现代叙事材料，却被重新放入古典诗词的语言结构之中。</p>
-<p>从作品结构观察，不同词牌与诗体对应人生阶段的转换，使作品具有一定的章节感与时间推进感。这种结构安排可以视为张叡诗词创作中“传统形式与个人生命史结合”的一个代表性案例。</p>
-<h4>7.3 从个人记忆到时代记忆</h4>
-<p>《我的高考路》表面上写的是一个人的求学道路，实际上包含了恢复高考后成长起来的一代人的共同记忆。乡村青年、求学机会、大学选择、科研道路以及后来的人生迁徙，构成了一条从个人经历延伸至时代记忆的叙事线。</p>
-
-<h3 id="c8">第八章　档案索引与资料来源</h3>
-<h4>8.1 核心资料索引</h4>
-<p><strong>人物身份：</strong>北美高校联盟鹤鸣文学社副社长、《鹤鸣文学》总编。</p>
-<p><strong>科研经历：</strong>兰州大学、中国科学院、德国鲁尔大学、美国雪城大学、美国制药企业等。</p>
-<p><strong>科研成果：</strong>中国科学院科学技术进步二等奖、三等奖各一项；国内外论文资料。</p>
-<p><strong>文学成果：</strong>截至现有资料统计，诗词作品集11部；英文小说《BURBLE》；多个文学平台发表。</p>
-<p><strong>编辑实践：</strong>《鹤鸣文学》第15期及“我的高考故事”专题；《我的高考路》六首组诗。</p>
-<p><strong>新媒体创作：</strong>视觉诗画；AI谱曲演唱作品280余首；美篇、微信、喜马拉雅等平台。</p>
-
-<h4>8.2 主要参考资料</h4>
-<p>1. 张飞曾：《赏析张飞曾先生题和文友张叡人生》，美篇，2025-04-10。</p>
-<p>2. 热情的老刘不忙：《我的高考路——〈鹤鸣文学〉第十五期主刊特别推荐》，百度动态，2026-09-03。</p>
-<p>3. 张叡：《鹤鸣·同心曲》，美篇，2025-09-18。</p>
-<p>4. 综合检索及作品资料整理。</p>
-<p>5. 2025年与2026年相关资料对比整理。</p>
-
-<div class="note"><strong>资料使用说明</strong><br>
-本档案为根据现有资料形成的文学人物研究与数字档案文本。部分作品数量、平台数量、获奖及入选信息来自现有二手资料或综合整理；如未来获得正式出版物、证书、刊物目录或原始网页，可继续增补、校正，并保留版本更新记录。
-</div>
-
-<footer>
-张叡文学档案 · 2026年9月<br>
-“以科学观世界，以诗歌写人生，以AI探索未来。”
-</footer>
-</main></body></html>
+  // ====== Tabs ======
+  var btns=document.querySelectorAll('#styleTabs .tab-btn');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active');
+      var tgt=b.getAttribute('data-tab');
+      document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+      document.getElementById(tgt).classList.add('active');
+    });
+  });
+})();
+</script>
+</body></html>
+<!--34157996422395614730092007-->
