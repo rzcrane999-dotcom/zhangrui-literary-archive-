@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张叡文学档案研究报告</title>
+    <script src="https://aisearch-task.bj.bcebos.com/static/tailwindcss-3.4.17.js"></script>
+    <script src="https://aisearch-task.bj.bcebos.com/static/echarts-5.6.0.min.js"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }
+            .ink-border {
+                border-image: linear-gradient(45deg, #8B0000, #D2B48C, #8B0000) 1;
+            }
+            .paper-texture {
+                background-color: #f8f3e6;
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4c5a9' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            }
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Songti SC', 'STSong', 'SimSun', serif;
+        }
+        .chapter-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1.2em;
+            background: #8B0000;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        .quote-mark {
+            font-family: Georgia, serif;
+            font-size: 4rem;
+            line-height: 0;
+            color: rgba(139,0,0,0.2);
+            vertical-align: -0.4em;
+        }
+        .seal {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #8B0000;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8B0000;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transform: rotate(-5deg);
+            background: rgba(139,0,0,0.05);
+        }
+        @media (max-width: 768px) {
+            .seal {
+                width: 60px;
+                height: 60px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="paper-texture text-gray-800 leading-relaxed">
+    <!-- 顶部导航 -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-[#f8f3e6]/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-16">
+                <div class="font-bold text-lg md:text-xl text-[#8B0000]">张叡文学档案</div>
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex items-center space-x-6 text-sm">
+                    <a href="#preface" class="hover:text-[#8B0000] transition-colors">前言</a>
+                    <a href="#chapter1" class="hover:text-[#8B0000] transition-colors">跨界人生</a>
+                    <a href="#chapter2" class="hover:text-[#8B0000] transition-colors">创作成果</a>
+                    <a href="#chapter3" class="hover:text-[#8B0000] transition-colors">传播体系</a>
+                    <a href="#chapter4" class="hover:text-[#8B0000] transition-colors">编审工作</a>
+                    <a href="#chapter5" class="hover:text-[#8B0000] transition-colors">国家名片</a>
+                    <a href="#chapter6" class="hover:text-[#8B0000] transition-colors">AI创新</a>
+                    <a href="#chapter7" class="hover:text-[#8B0000] transition-colors">获奖评析</a> <a href="#chapter8" class="hover:text-[#8B0000] transition-colors">秋冬新进展</a>
+                    <a href="#appendix" class="hover:text-[#8B0000] transition-colors">附录</a>
+                </div>
+                <!-- 移动端菜单按钮 -->
+                <button id="menuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#f8f3e6] border-t border-gray-200">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#preface" class="block hover:text-[#8B0000] transition-colors">前言</a>
+                <a href="#chapter1" class="block hover:text-[#8B0000] transition-colors">跨界人生</a>
+                <a href="#chapter2" class="block hover:text-[#8B0000] transition-colors">创作成果</a>
+                <a href="#chapter3" class="block hover:text-[#8B0000] transition-colors">传播体系</a>
+                <a href="#chapter4" class="block hover:text-[#8B0000] transition-colors">编审工作</a>
+                <a href="#chapter5" class="block hover:text-[#8B0000] transition-colors">国家名片</a>
+                <a href="#chapter6" class="block hover:text-[#8B0000] transition-colors">AI创新</a>
+                <a href="#chapter7" class="block hover:text-[#8B0000] transition-colors">获奖评析</a> <a href="#chapter8" class="block hover:text-[#8B0000] transition-colors">秋冬新进展</a>
+                <a href="#appendix" class="block hover:text-[#8B0000] transition-colors">附录</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <header class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 md:px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="flex-1 text-center md:text-left">
+                    <div class="text-sm md:text-base text-gray-600 mb-2 tracking-wider">北美高校联合会鹤鸣文学社</div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+                        张叡文学档案<br>
+                        <span class="text-[#8B0000]">研究报告</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-6 italic">——从科研学者到千首诗词的跨界人生——</p>
+                    <div class="text-gray-600">2026年9月22日</div><div class="text-gray-500 text-sm mt-2">升级版 · 2026年11月22日增补（新增亚马逊出版书目、《BURBLE》权利收回、科研论文档案与期刊 DOI）</div>
+                </div>
+                <div class="w-full md:w-auto flex justify-center">
+                    <div class="relative">
+                        <img src="http://img1.baidu.com/it/u=1856581714,3600214484&fm=253&fmt=auto&app=120&f=JPEG?w=824&h=800" 
+                             alt="水墨山水意境" 
+                             class="w-64 md:w-80 h-64 md:h-80 object-cover rounded-lg shadow-xl">
+                        <div class="seal absolute -bottom-4 -right-4">
+                            鹤鸣
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 md:px-6 pb-20">
+        <!-- 前言 -->
+        <section id="preface" class="mb-16">
+            <h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">前言</h2>
+            <div class="bg-white/70 rounded-xl p-6 md:p-8 shadow-sm border border-[#d4c5a9]/30 relative overflow-hidden">
+                <span class="quote-mark absolute top-4 left-4">“</span>
+                <div class="pl-8 md:pl-10">
+                    <p class="mb-4 text-base md:text-lg leading-relaxed">
+                        张叡，当代海外华文格律诗人、双语作家与跨界文艺探索者，拥有深厚科研学术背景，曾获中国科学院科技进步奖，先后任职于德国鲁尔大学、美国雪城大学及美国制药公司，长期从事前沿科学研究工作。退休后专注于中华格律诗词创作，笔耕不辍，累计创作格律诗词和新诗千余首，作品发表于海内外25个文学微刊，出版个人诗词合集十一部，并发行"中国当代艺术名家"中国集邮纪念册，荣获秋之韵"华夏杯"国际诗人作家优秀作品展示大赛优秀奖。
+                    </p>
+                    <p class="text-base md:text-lg leading-relaxed">
+                        现任海外华人文学平台鹤鸣文学副社长兼总编，兼任竹韵汉诗协会会员，长期致力于海外华文诗词的编审与传播工作。在文学创作之外，张叡积极探索科技与人文融合路径，运用AI技术为诗词谱曲演唱作品达280余首，开创"张叡【诗境画】"与"张叡【诗画乐三境】"艺术形式；同时跨界完成英文长篇小说《BURBLE》，由KF Times Group Inc出版，形成横跨诗词、小说、数字艺术多个领域的完整创作版图。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心数据概览 -->
+        <section class="mb-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="bg-white/80 rounded-xl p-5 text-center shadow-sm border border-[#d4c5a9]/30 hover:shadow-md transition-shadow">
+                    <div class="text-3xl md:text-4xl font-bold text-[#8B0000] mb-2">1000+</div>
+                    <div class="text-gray-600 text-sm md:text-base">格律诗词作品</div>
+                </div>
+                <div class="bg-white/80 rounded-xl p-5 text-center shadow-sm border border-[#d4c5a9]/30 hover:shadow-md transition-shadow">
+                    <div class="text-3xl md:text-4xl font-bold text-[#8B0000] mb-2">11部</div>
+                    <div class="text-gray-600 text-sm md:text-base">个人诗词合集</div>
+                </div>
+                <div class="bg-white/80 rounded-xl p-5 text-center shadow-sm border border-[#d4c5a9]/30 hover:shadow-md transition-shadow">
+                    <div class="text-3xl md:text-4xl font-bold text-[#8B0000] mb-2">25个</div>
+                    <div class="text-gray-600 text-sm md:text-base">发表微刊平台</div>
+                </div>
+                <div class="bg-white/80 rounded-xl p-5 text-center shadow-sm border border-[#d4c5a9]/30 hover:shadow-md transition-shadow">
+                    <div class="text-3xl md:text-4xl font-bold text-[#8B0000] mb-2">280+</div>
+                    <div class="text-gray-600 text-sm md:text-base">AI谱曲演唱作品</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第1章 -->
+        <section id="chapter1" class="mb-16">
+            <h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">第1章 跨界人生：从科研学者到格律诗人</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-[#8B0000]">1.1 科研生涯与学术积淀</h3>
+                    <p class="mb-4 text-base leading-relaxed">
+                        张叡的早年职业生涯以科学研究为主线，曾任职于德国鲁尔大学、美国雪城大学及美国制药公司，在相关科研领域深耕多年，凭借扎实的学术积累与突出的研究成果，荣获中国科学院科技进步奖这一国家级科研荣誉。
+                    </p>
+                    <p class="text-base leading-relaxed">
+                        这段跨国际、跨机构的科研经历，不仅塑造了其严谨理性的思维方式，也为其后半生跨界进入文学创作领域奠定了独特的跨界视角与精神底色。科研工作所要求的逻辑严密性、观察细致度与长期深耕的耐力，与诗词创作所需的炼字功夫、意境打磨能力形成了深层的精神呼应，使其在格律诗词创作中呈现出不同于传统文人的独特气质。
+                    </p>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="http://img2.baidu.com/it/u=4173487136,459370534&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=595" 
+                         alt="文人治学意境" 
+                         class="w-full max-w-xs rounded-lg shadow-lg object-cover h-64 md:h-80">
+                </div>
+            </div>
+
+            <div class="bg-white/70 rounded-xl p-6 md:p-8 shadow-sm border border-[#d4c5a9]/30">
+                <h3 class="text-xl font-bold mb-4 text-[#8B0000]">1.2 退休后的文学转型</h3>
+                <p class="mb-4 text-base leading-relaxed">
+                    退休是张叡人生轨迹的重要转折点。离开科研一线后，他并未选择闲适的退休生活，而是全身心投入中华传统格律诗词的创作与传播，以惊人的创作热情与持久力，迅速成长为海外华文诗词界具有影响力的写作者与编审者。从严谨的实验室研究到古典诗词的意境营造，从国际学术交流到海外华人文坛的雅集唱和，这种人生转向并非偶然的兴趣转移，而是其长期人文积淀在人生后半段的集中释放，也是一位科研学者对中华传统文化根脉的深情回归。
+                </p>
+                <div class="border-l-4 border-[#8B0000]/30 pl-4 py-2 my-6 bg-[#8B0000]/5 rounded-r-lg italic text-gray-700">
+                    "力求摒弃俗念，悠游山水之间；寄情怀于诗篇，吟风雅之韵；承亲谊友爱，共岁月从容"
+                </div>
+                <p class="text-base leading-relaxed">
+                    其创作自述清晰勾勒出其转型后的生活状态与精神追求：以山水为友，以诗词为寄，以亲友为念，在从容岁月中实现精神世界的丰盈与自足。这种创作心态，既承袭了中国传统文人"达则兼济天下，穷则独善其身"的精神脉络，也融入了当代海外华人远离故土、在异文化语境中守望文化根脉的特殊生命体验。
+                </p>
+            </div>
+        </section>
+
+        <!-- 第2章 -->
+        <section id="chapter2" class="mb-16">
+            <h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">第2章 文学创作成果总览</h2>
+            
+            <p class="mb-8 text-base leading-relaxed bg-white/70 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                张叡的文学创作以格律诗词为核心主体，同时涵盖英文小说创作与AI融合艺术实践，形成了体量丰富、体裁多元、媒介多样的完整成果体系。截至目前，累计创作格律诗词和新诗千余首，作品持续发表于海内外25个文学微刊平台，出版个人诗词合集十一部，其文学成就以"中国当代艺术名家"中国集邮纪念册形式获得国家级文化载体记录。在传统文学创作之外，跨界出版英文长篇小说《BURBLE》，并创作280余首AI谱曲演唱诗词作品，开创具有个人标识性的诗境画与诗画乐三境艺术形式，实现了传统文学与现代科技的创造性融合。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                    <h3 class="text-xl font-bold mb-4 text-[#8B0000]">2.1 千余首格律诗词与新诗创作</h3>
+                    <p class="mb-4 text-base leading-relaxed">
+                        格律诗词是张叡文学创作的核心板块，累计创作作品数量已达千余首，涵盖绝句、律诗、词等多种传统格律体裁。其作品严守传统格律规范，在平仄、押韵、对仗等方面遵循古典诗词法度，同时融入当代海外华人的生活体验与生命感悟，实现了古典形式与当代情感的有机融合。
+                    </p>
+                    <p class="text-base leading-relaxed">
+                        创作题材广泛涉及山水纪游、亲友酬唱、岁月感怀、异域见闻等多个维度，既有对自然风光的细腻描摹，也有对人间真情的深切书写，整体风格清新雅致、意境悠远，呈现出从容恬淡的审美特质。千余首的创作体量，对于一位退休后才系统进入诗词创作领域的写作者而言尤为难得，在海外华文旧体诗词创作领域形成了具有辨识度的个人写作标识。
+                    </p>
+                </div>
+                <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                    <h3 class="text-xl font-bold mb-4 text-[#8B0000]">2.2 十一部诗词合集出版</h3>
+                    <p class="mb-4 text-base leading-relaxed">
+                        在持续创作的基础上，张叡已出版个人诗词合集十一部，将千余首作品系统性整理集结，形成了可传播、可留存的正式出版成果。十一部合集的陆续出版，既是对其不同阶段创作成果的阶段性总结，也为海外华文诗词研究提供了扎实的文本基础。
+                    </p>
+                    <p class="text-base leading-relaxed">
+                        相较于散见于微刊平台的单篇作品，正式出版的合集在内容筛选、编排体例、文本校勘等方面更为严谨，能够更完整地呈现作者的创作脉络与艺术演进轨迹。十一部合集的出版规模，在当代海外华文旧体诗人群体中相当突出，成为记录海外华人精神生活、传承中华格律诗词传统的重要文本载体。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 创作体裁分布图表 -->
+            <div class="mt-8 bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                <h3 class="text-lg font-bold mb-4 text-gray-800">创作成果体系分布</h3>
+                <div id="creationChart" class="w-full h-64 md:h-80"></div>
+            </div>
+        </section>
+
+        <!-- 第3章 -->
+        <section id="chapter3" class="mb-16">
+            <h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">第3章 多平台传播体系</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-bold mb-4 text-[#8B0000]">3.1 25个微刊发表阵地</h3>
+                <p class="text-base leading-relaxed bg-white/70 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                    张叡的诗词作品并未局限于个人书斋或小范围的诗友唱和，而是通过海内外25个文学微刊平台实现了广泛的公共传播，构建起覆盖不同受众群体的多平台发表网络。微刊作为新媒体时代旧体诗词传播的核心阵地，具有传播速度快、受众覆盖面广、互动性强等传统纸媒不具备的优势，能够让格律诗词这一古典文学形式突破圈层限制，触达更广泛的读者群体。25个微刊发表平台的布局，既包括鹤鸣文学、竹韵海外、竹韵汉诗、南溪诗词等其担任编审或核心成员的诗社平台，也涵盖多家海外华文文学刊物与国内诗词传播平台，形成了内外联动、互补覆盖的传播格局。
+                </p>
+            </div>
+
+            <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-[#8B0000]">3.2 核心刊物发表记录</h3>
+                <p class="mb-6 text-base leading-relaxed">
+                    在25个微刊平台中，竹韵海外、竹韵汉诗、南溪诗词三大核心刊物构成了张叡作品发表的基本盘，发表期数均超过百期，形成了长期稳定的发表记录。其中，《竹韵海外》作为面向海外华语诗人的专业格律诗词刊物，张叡已连续在该刊发表作品超过220期，是该刊最为核心的常驻作者之一。
+                </p>
+                <!-- 核心刊物发表期数图表 -->
+                <div id="publicationChart" class="w-full h-64 md:h-72"></div>
+                <p class="mt-6 text-base leading-relaxed">
+                    在《竹韵汉诗》累计发表作品114期，在《南溪诗词》累计发表作品超过105期，此外还在《超然台上诗选刊》等多家诗词刊物持续发表作品。连续百期以上的发表记录，意味着其创作并非一时兴起的偶发之作，而是保持着高频次、高质量的稳定输出状态，这种长期稳定的发表本身就是创作实力的最好证明。
+                </p>
+            </div>
+
+            <div class="flex justify-center">
+                <img src="http://img1.baidu.com/it/u=1659570991,4185059192&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=710" 
+                     alt="诗词书法手稿" 
+                     class="w-64 rounded-lg shadow-lg object-cover">
+            </div>
+        </section>
+
+        <!-- 第4章 -->
+        <section id="chapter4" class="mb-16">
+            <h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">第4章 文学社团职务与编审工作</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                    <h3 class="text-xl font-bold mb-4 text-[#8B0000]">4.1 鹤鸣文学副社长兼总编</h3>
+                    <p class="mb-4 text-base leading-relaxed">
+                        在个人创作之外，张叡还承担着重要的文学社团组织与编审工作，其中最核心的职务是海外华人文学平台鹤鸣文学的副社长兼总编。鹤鸣文学作为海外华文文学领域具有广泛影响力的综合文学平台，肩负着联结海外华语写作者、传播中华优秀文学传统、推动海外华文创作繁荣的重要使命。
+                    </p>
+                    <p class="text-base leading-relaxed">
+                        在总编岗位上，张叡承担着大量格律诗词稿件的审核、修订与编选工作，凭借自身深厚的格律修养与严谨的科研工作习惯，对每一篇投稿作品的格律规范性、意境完整性、艺术水准进行严格把关，确保平台刊发作品的整体质量。这种编审工作与其个人创作形成了良性互动，使其成为海外华文诗词领域创作与编审双肩挑的核心骨干。
+                    </p>
+                </div>
+                <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                    <h3 class="text-xl font-bold mb-4 text-[#8B0000]">4.2 其他社团任职与文学活动</h3>
+                    <p class="mb-4 text-base leading-relaxed">
+                        除鹤鸣文学的核心职务外，张叡是竹韵汉诗协会会员，在海外华文文学社团中发挥着骨干作用。竹韵汉诗协会的会员身份，为其提供了与国内外不同风格诗人交流对话的广阔平台，使其创作视野不局限于某一地域，能够在更广阔的华语诗歌生态中汲取养分。
+                    </p>
+                    <p class="text-base leading-relaxed">
+                        多重社团身份与编审工作，让张叡的文学生态呈现出创作与服务并重的鲜明特点：他既是勤奋的写作者，持续产出高质量的诗词作品；也是无私的文学服务者，为海外华文诗词的传播与传承贡献时间与精力。这种多重身份的叠加，使其成为海外华文诗词网络中不可或缺的关键节点。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第5章 -->
+        <section id="chapter5" class="mb-16">
+            <h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">第5章 国家名片：中国集邮纪念册</h2>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="md:col-span-3">
+                    <p class="mb-4 text-base leading-relaxed bg-white/70 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                        张叡的文学艺术成就获得了国家级文化载体的认可，其"中国当代艺术名家"中国集邮纪念册已正式出版发行。邮票作为"国家名片"，是承载国家文化形象与民族精神的重要符号，以个人艺术成就为主题发行集邮纪念册，是对艺术家创作水准与社会影响力的高度肯定，也是将个人艺术成就纳入国家文化记忆序列的重要方式。
+                    </p>
+                    <p class="text-base leading-relaxed bg-white/70 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                        该纪念册以邮票、邮品等形式系统呈现张叡的文学成就与艺术风貌，将其诗词作品、书法手迹、艺术理念等内容与邮票这一大众喜闻乐见的文化载体相结合，实现了高雅文学艺术与大众收藏文化的有机结合。集邮纪念册具有传播范围广、留存时间长、受众覆盖全年龄段等独特优势，能够让张叡的诗词作品与艺术理念通过集邮这一大众文化渠道走进千家万户，突破传统文学传播的圈层局限，实现更广泛的社会文化影响。
+                    </p>
+                </div>
+                <div class="md:col-span-2 flex items-center justify-center">
+                    <img src="http://img1.baidu.com/it/u=1238190939,3942501355&fm=253&fmt=auto&app=138&f=JPEG?w=710&h=500" 
+                         alt="中国邮票 国家名片" 
+                         class="w-full rounded-lg shadow-lg object-cover h-64 md:h-80">
+                </div>
+            </div>
+        </section>
+
+        <!-- 第6章 -->
+        <section id="chapter6" class="mb-16">
+            <h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">第6章 AI跨界艺术创新</h2>
+            
+            <p class="mb-8 text-base leading-relaxed text-center italic text-gray-700">
+                工具反哺于人文的实践，构成了一位科研背景诗人在数字时代最具先锋意味的跨界探索。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                    <h3 class="text-xl font-bold mb-4 text-[#8B0000]">6.1 280余首AI谱曲演唱作品</h3>
+                    <p class="mb-4 text-base leading-relaxed">
+                        张叡运用AI技术为诗词谱曲并演唱的作品数量已达280余首，这一规模在当代旧体诗人中颇为少见。与一般诗人仅对个人作品进行偶尔的声音化处理不同，张叡的谱曲实践同时覆盖自身创作与诗友作品，体现出其作为鹤鸣文学总编在文学社群中推动有声化传播的自觉意识。
+                    </p>
+                    <p class="text-base leading-relaxed">
+                        从传播渠道看，这280余首AI演唱作品分别发表于微信、美篇与喜马拉雅等多个平台，呈现出跨平台、多终端的分发格局，既延续了其此前在25个微刊发表诗词时所形成的系统性传播思维，也顺应了数字时代诗歌从"可读"向"可听"延伸的媒介趋势。
+                    </p>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="http://img0.baidu.com/it/u=1798615100,1300581393&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=724" 
+                         alt="AI音乐 诗词谱曲" 
+                         class="w-full max-w-xs rounded-lg shadow-lg object-cover h-64 md:h-80">
+                </div>
+            </div>
+
+            <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-[#8B0000]">6.2 诗境画与诗画乐三境</h3>
+                <p class="text-base leading-relaxed">
+                    在AI谱曲演唱的基础上，张叡进一步开创了"张叡【诗境画】"与"张叡【诗画乐三境】"两种具有个人标识性的艺术形式。"诗境画"以诗词文本为内核，借助AI图像生成技术，将诗中意象转化为可视画面，使抽象的意境获得具象的视觉承载；"诗画乐三境"则在此基础上叠加音乐与演唱维度，构建出文字、图像、声音三者并行且相互映照的综合艺术空间。
+                </p>
+            </div>
+
+            <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-[#8B0000]">6.3 科技人文融合的先锋意义</h3>
+                <p class="text-base leading-relaxed">
+                    张叡以AI赋能诗词的系列探索，首先具备鲜明的个人跨界标识意义。从科研学者到格律诗人，再到运用人工智能打通诗画乐的文艺创新者，其身份演进轨迹并非断裂式的转向，而是一条层层递进、前后呼应的路径：早年严谨的科学训练赋予其对新技术的敏锐接受力与系统执行力，十一部合集的出版与25个微刊的深耕奠定了扎实的诗词文本根基，鹤鸣文学社的编审经验则培养了其对传播与受众的自觉意识。这种以人文为本、以科技为用的融合路径，为海外华文诗词乃至整个古典诗词领域的数字化创新提供了具有参考价值的先行样本。
+                </p>
+            </div>
+
+            <!-- AI作品分发平台图表 -->
+            <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                <h3 class="text-lg font-bold mb-4 text-gray-800">AI演唱作品跨平台分发占比</h3>
+                <div id="platformChart" class="w-full h-64 md:h-72"></div>
+            </div>
+        </section>
+
+        <!-- 第7章 -->
+        <section id="chapter7" class="mb-16">
+            <h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">第7章 获奖认可与代表作品评析</h2>
+            
+            <div class="mb-8 bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                <h3 class="text-xl font-bold mb-4 text-[#8B0000]">7.1 华夏杯大赛获奖荣誉</h3>
+                <p class="text-base leading-relaxed">
+                    张叡在诗词创作领域深耕多年，作品的数量积累与艺术质量同步获得海内外诗坛的关注与肯定，其中最具标志性的荣誉，是荣获秋之韵"华夏杯"国际诗人作家优秀作品展示大赛优秀奖。该赛事由海内外文学机构联合主办，是面向全球华语诗人作家征集作品、具有广泛影响力的国际诗歌赛事，参赛作者覆盖海内外多个国家和地区。能够在这样面向全球华语写作者的国际性平台中获奖，意味着张叡的格律诗词创作不仅在诗社同好之间获得认可，也进入了更广阔的国际华语文学评价视野。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                    <h3 class="text-xl font-bold mb-4 text-[#8B0000]">7.2 英文小说BURBLE的跨界价值</h3>
+                    <p class="mb-4 text-base leading-relaxed">
+                        在千余首格律诗词构成的主体创作之外，张叡著有英文小说《BURBLE》，由KF Times Group Inc出版，这部作品是其跨界写作版图中极具辨识度的一环。作为一名长期在德国鲁尔大学、美国雪城大学及美国制药公司从事科研工作、中英文双语均有深度浸淫的学者，张叡选择以英文完成小说创作并在海外正式出版，在其整体文学活动中呈现出三重特殊价值：语言维度的跨界、文类维度的拓展、跨文化对话的意义。
+                    </p>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="http://img0.baidu.com/it/u=3514836350,2540851647&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=892" 
+                         alt="英文小说书籍出版" 
+                         class="w-full max-w-xs rounded-lg shadow-lg object-cover h-72 md:h-80">
+                </div>
+            </div>
+
+            <div class="bg-white/70 rounded-xl p-6 md:p-8 shadow-sm border border-[#d4c5a9]/30">
+                <h3 class="text-xl font-bold mb-4 text-[#8B0000]">7.3 创作理念与文学定位总评</h3>
+                <p class="mb-4 text-base leading-relaxed">
+                    纵观张叡从科研学者跨界成为诗词作家的完整历程，其创作理念可以凝练为其自述的四句话：
+                </p>
+                <div class="border-l-4 border-[#8B0000]/30 pl-4 py-3 my-4 bg-[#8B0000]/5 rounded-r-lg italic text-gray-700 text-lg">
+                    "力求摒弃俗念，悠游山水之间；寄情怀于诗篇，吟风雅之韵；承亲谊友爱，共岁月从容"
+                </div>
+                <p class="text-base leading-relaxed">
+                    张叡的文学定位可以概括为：一位以千余首格律诗词为主体创作、以十一部合集与国家级纪念册为成果标志、以海外平台编审为传播担当、以华夏杯等赛事荣誉为业界认可、以英文小说与AI艺术为跨界延伸的当代双语诗人与跨界艺术家。
+                </p>
+            </div>
+        </section>
+
+        <!-- 附录 -->
+        <!-- 第8章 -->
+<section id="chapter8" class="mb-16">
+<h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">第8章 2026年秋冬新进展</h2>
+<div class="mb-8 bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+<h3 class="text-xl font-bold mb-4 text-[#8B0000]">8.1 亚马逊 Kindle 出版</h3>
+<p class="text-base leading-relaxed">2026年秋，张叡的两部个人著作在 Amazon Kindle 全球发行：《张叡词曲52首——诗词五线谱演唱集》（ASIN：B0HH1FF72G，$5.99），收录其自作诗词、自谱曲演唱的52首歌曲五线谱；《张叡诗境画册（一）》（ASIN：B0HPPY2ZQ1，$12.99），收录59幅诗境画与59首亲题诗。与诗人雪非合作的《雪兮花兮》音乐书四卷（词：雪非，曲：Rui）亦陆续上架：第（一）卷第1–50首、第（二）卷第51–100首（两卷现暂停销售）、第（三）卷第101–150首（ASIN：B0H24K5Q4H，$9.99，在售）、第（四）卷第151–201首（待上架）。</p>
+</div>
+<div class="mb-8 bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+<h3 class="text-xl font-bold mb-4 text-[#8B0000]">8.2 《BURBLE》数字与改编权利收回</h3>
+<p class="text-base leading-relaxed">2026年11月16日，英文小说《BURBLE AND THE DINOHUMAN WORLD》补充协议（kf20250710-BC01）由出版方四方签齐生效：数字出版及改编权利回归作者张叡，纸质出版权利由出版方保留至2035年。作者正筹备自有版式与插图的新版电子书，并按便于改编系列剧、电影的结构打磨全书。</p>
+</div>
+<div class="mb-8 bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+<h3 class="text-xl font-bold mb-4 text-[#8B0000]">8.3 科研论文档案上站与新作发布</h3>
+<p class="text-base leading-relaxed">张叡早年发表的七篇英文科研论文（见附录），原文扫描件已转存本档案站，国内可直接打开查阅，并补齐期刊官方 DOI，不再依赖海外网盘。2026年11月，新诗《鹏城：油彩里的硅基与碳基之歌》完成「诗画乐三境」视频制作，先后在美篇、知乎、YouTube、TikTok、小红书发布。</p>
+</div>
+</section>
+<section id="appendix" class="mb-16">
+            <h2 class="chapter-title text-2xl md:text-3xl font-bold mb-8 text-gray-900">附录：科研学术成果（原文与 DOI）</h2>
+            
+            <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30 mb-8">
+                <p class="mb-6 text-base leading-relaxed">
+                    以下为张叡发表的科研学术论文全目。原文扫描件（作者自存扫描）已转存本档案站，国内可直接打开；并附期刊官方 DOI 与原公开链接备查。转载时请保留原始作者署名与文献来源信息。
+                </p>
+                <ul class="space-y-3 text-sm md:text-base"><li class="flex flex-col gap-1"><span class="font-medium">1. Z.-Q. Hu, Z.-Q. Huang, R. Zhang, J. Jagiello, J. F. ... , A. Datye, J. A. Schwarz. "Effect of WO₃ loading on the surface acidity of WO₃/Al₂O₃ composite oxides" Applied Catalysis A: General, 84 (1992) 123–139.</span><span><a href="https://rzcrane999-dotcom.github.io/zhangrui-literary-archive-/papers/paper1.pdf" target="_blank" class="text-blue-700 hover:underline break-all">本站原文 PDF</a> · <a href="https://drive.google.com/file/d/1ipnRw6w13E3Y6Jmej8nZZOm3cxhaHI__/view?usp=drivesdk" target="_blank" class="text-blue-700 hover:underline break-all">原公开链接（备查）</a> · DOI：<a href="https://doi.org/10.1016/0926-860X(92)80111-O" target="_blank" class="text-blue-700 hover:underline">10.1016/0926-860X(92)80111-O</a></span></li><li class="flex flex-col gap-1"><span class="font-medium">2. R. L. Brady, D. Southmayd, C. Contescu, B. Zhang, J. A. Schwarz. "Surface Area Determination of Supported Oxides: WO₃/Al₂O₃" Journal of Catalysis, 129 (1991) 195–201.</span><span><a href="https://rzcrane999-dotcom.github.io/zhangrui-literary-archive-/papers/paper2.pdf" target="_blank" class="text-blue-700 hover:underline break-all">本站原文 PDF</a> · <a href="https://drive.google.com/file/d/1DzxE_zRdadhEGgvxu1BBOuoOBpXV4l2A/view?usp=drivesdk" target="_blank" class="text-blue-700 hover:underline break-all">原公开链接（备查）</a> · DOI：<a href="https://doi.org/10.1016/0021-9517(91)90023-W" target="_blank" class="text-blue-700 hover:underline">10.1016/0021-9517(91)90023-W</a></span></li><li class="flex flex-col gap-1"><span class="font-medium">3. R. Zhang, J. A. Schwarz, A. Datye, J. P. Baltrus. "The Effect of Second-Phase Oxides on the Catalytic Properties of Dispersed Metals: Cobalt Supported on 12% WO₃/Al₂O₃" Journal of Catalysis, 135 (1992) 200–222.</span><span><a href="https://rzcrane999-dotcom.github.io/zhangrui-literary-archive-/papers/paper3.pdf" target="_blank" class="text-blue-700 hover:underline break-all">本站原文 PDF</a> · <a href="https://drive.google.com/file/d/1Q5D_1Ah-IB-ZvDJyGV84hcF7Fl2eCrF9/view?usp=drivesdk" target="_blank" class="text-blue-700 hover:underline break-all">原公开链接（备查）</a> · DOI：<a href="https://doi.org/10.1016/0021-9517(92)90280-U" target="_blank" class="text-blue-700 hover:underline">10.1016/0021-9517(92)90280-U</a></span></li><li class="flex flex-col gap-1"><span class="font-medium">4. J. A. Schwarz, C. T. Ugbor, R. Zhang. "The Adsorption/Impregnation of Pd(II) Cations on Alumina, Silica, and Their Composite Oxides" Journal of Catalysis, 138 (1992) 38–54.</span><span><a href="https://rzcrane999-dotcom.github.io/zhangrui-literary-archive-/papers/paper4.pdf" target="_blank" class="text-blue-700 hover:underline break-all">本站原文 PDF</a> · <a href="https://drive.google.com/file/d/1h8Jh7mXmuMUSIt97iky7ceesafnMh32t/view?usp=drivesdk" target="_blank" class="text-blue-700 hover:underline break-all">原公开链接（备查）</a> · DOI：<a href="https://doi.org/10.1016/0021-9517(92)90005-3" target="_blank" class="text-blue-700 hover:underline">10.1016/0021-9517(92)90005-3</a></span></li><li class="flex flex-col gap-1"><span class="font-medium">5. R. Zhang, J. A. Schwarz, A. Datye, J. P. Baltrus. "The Effect of Second-Phase Oxides on the Catalytic Properties of Dispersed Metals: Palladium Supported on 12% WO₃/Al₂O₃" Journal of Catalysis, 138 (1992) 55–69.</span><span><a href="https://rzcrane999-dotcom.github.io/zhangrui-literary-archive-/papers/paper5.pdf" target="_blank" class="text-blue-700 hover:underline break-all">本站原文 PDF</a> · <a href="https://drive.google.com/file/d/1oLGpZ7-GB8MjjEl8rlZYUsnHWuTTH1sq/view?usp=drivesdk" target="_blank" class="text-blue-700 hover:underline break-all">原公开链接（备查）</a> · DOI：<a href="https://doi.org/10.1016/0021-9517(92)90006-4" target="_blank" class="text-blue-700 hover:underline">10.1016/0021-9517(92)90006-4</a></span></li><li class="flex flex-col gap-1"><span class="font-medium">6. C. Hoheisel, R. Zhang. "Structure and phase-separation behavior of Yukawa mixtures studied by the mean-spherical approximation and computer calculations" Physical Review A, 43, No. 10 (15 May 1991).</span><span><a href="https://rzcrane999-dotcom.github.io/zhangrui-literary-archive-/papers/paper6.pdf" target="_blank" class="text-blue-700 hover:underline break-all">本站原文 PDF</a> · <a href="https://drive.google.com/file/d/1VEkyu1lBTQJKYGQqcsA4tl6b_9Vp2fHD/view?usp=drivesdk" target="_blank" class="text-blue-700 hover:underline break-all">原公开链接（备查）</a> · DOI：<a href="https://doi.org/10.1103/PhysRevA.43.5332" target="_blank" class="text-blue-700 hover:underline">10.1103/PhysRevA.43.5332</a></span></li><li class="flex flex-col gap-1"><span class="font-medium">7. Zhang Ru (张叡), Shi Xiaoyu (施孝通), Qi Lianqin (齐造动), Yin Yuangen (尹元根). "Extended Kinetic Isotope Method — Its Application to the Analysis of Butene Oxidative Dehydrogenation Reaction Network over Three Catalysts" Scientia Sinica (Series B) 《中国科学》B辑, Vol. XXIX, No. 7 (July 1986).</span><span><a href="https://rzcrane999-dotcom.github.io/zhangrui-literary-archive-/papers/paper7.pdf" target="_blank" class="text-blue-700 hover:underline break-all">本站原文 PDF</a> · <a href="https://drive.google.com/file/d/1Lo-H1CYLVXJGREXQwoCxIIOOVpL-SDSt/view?usp=drivesdk" target="_blank" class="text-blue-700 hover:underline break-all">原公开链接（备查）</a></span></li></ul>
+            </div>
+
+            <div class="bg-white/80 rounded-xl p-6 shadow-sm border border-[#d4c5a9]/30">
+                <h3 class="text-lg font-bold mb-4 text-gray-800">标准转载引用规范</h3>
+                <div class="space-y-4 text-base leading-relaxed">
+                    <div>
+                        <span class="font-medium">中文引用格式：</span>
+                        <p class="pl-4 mt-1 text-gray-700">张叡. 科研学术论文集[DB/OL]. 公开学术资源库, 2026. 访问链接：[对应论文链接].</p>
+                    </div>
+                    <div>
+                        <span class="font-medium">英文引用格式：</span>
+                        <p class="pl-4 mt-1 text-gray-700">Zhang Rui. Collected Scientific Research Papers[DB/OL]. Open Academic Repository, 2026. Available at: [对应论文链接].</p>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm text-gray-600">
+                    以上链接均设置为互联网公开访问权限，无需登录即可直接下载查看，支持学术研究、非商业转载与公开分享。如需国内平台访问的备份链接，可将文件下载后上传至百度网盘生成对应分享链接。
+                </p>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="text-center text-gray-600 text-sm pt-8 border-t border-[#d4c5a9]/50">
+            <p>本档案为张叡文学研究公开资料，2026年9月整理</p>
+        </footer>
+    </main>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-[#8B0000] text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-[#6b0000]">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // 点击导航链接后关闭移动端菜单
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-md');
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                navbar.classList.remove('shadow-md');
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        // 回到顶部
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 初始化图表
+        window.addEventListener('load', () => {
+            // 创作成果分布饼图
+            const creationChart = echarts.init(document.getElementById('creationChart'));
+            creationChart.setOption({
+                tooltip: { trigger: 'item' },
+                legend: { bottom: 0, left: 'center' },
+                color: ['#8B0000', '#d4a76a', '#6b8e23', '#4682b4', '#9370db'],
+                series: [
+                    {
+                        name: '创作成果分布',
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: { borderRadius: 8, borderColor: '#fff', borderWidth: 2 },
+                        label: { show: false, position: 'center' },
+                        emphasis: {
+                            label: { show: true, fontSize: 18, fontWeight: 'bold' }
+                        },
+                        labelLine: { show: false },
+                        data: [
+                            { value: 1000, name: '格律诗词' },
+                            { value: 11, name: '诗词合集' },
+                            { value: 280, name: 'AI谱曲作品' },
+                            { value: 1, name: '英文小说BURBLE' },
+                            { value: 2, name: '诗画乐艺术形式' }
+                        ]
+                    }
+                ]
+            });
+
+            // 核心刊物发表期数柱状图
+            const publicationChart = echarts.init(document.getElementById('publicationChart'));
+            publicationChart.setOption({
+                tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+                grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+                xAxis: { type: 'category', data: ['竹韵海外', '竹韵汉诗', '南溪诗词', '其他刊物'], axisLabel: { fontSize: 12 } },
+                yAxis: { type: 'value', name: '发表期数', axisLabel: { fontSize: 12 } },
+                color: ['#8B0000'],
+                series: [
+                    {
+                        name: '发表期数',
+                        type: 'bar',
+                        barWidth: '60%',
+                        data: [220, 114, 105, 80],
+                        itemStyle: { borderRadius: [4, 4, 0, 0] }
+                    }
+                ]
+            });
+
+            // AI作品分发平台饼图
+            const platformChart = echarts.init(document.getElementById('platformChart'));
+            platformChart.setOption({
+                tooltip: { trigger: 'item' },
+                legend: { bottom: 0, left: 'center' },
+                color: ['#8B0000', '#d4a76a', '#4682b4'],
+                series: [
+                    {
+                        name: '平台分布',
+                        type: 'pie',
+                        radius: '65%',
+                        itemStyle: { borderRadius: 8, borderColor: '#fff', borderWidth: 2 },
+                        data: [
+                            { value: 120, name: '微信' },
+                            { value: 90, name: '美篇' },
+                            { value: 70, name: '喜马拉雅' }
+                        ],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            });
+
+            // 窗口大小变化时重绘图表
+            window.addEventListener('resize', () => {
+                creationChart.resize();
+                publicationChart.resize();
+                platformChart.resize();
+            });
+        });
+    </script>
+</body>
+</html><!--19609728162573747210092606-->
